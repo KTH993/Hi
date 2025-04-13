@@ -1,48 +1,45 @@
 <!DOCTYPE html>
-<html lang="my">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>အကြောင်းအရာ</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .hidden { display: none; }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>ကိုတင်အေးမူလီဘောလ်နပ်</h1>
-  </header>
+    <button id="fontChangeBtn">Change Font</button>
+    
+    <!-- English Content -->
+    <div id="content-en" class="content">
+        <h1>About Us</h1>
+        <p>We provide the best products for your needs.</p>
+    </div>
+    
+    <!-- Myanmar Content -->
+    <div id="content-mm" class="content hidden">
+        <h1>ကျွန်တော်တို့အကြောင်း</h1>
+        <p>ကျွန်တော်တို့က သင့်လိုအပ်ချက်များအတွက် အကောင်းဆုံးထုတ်ကုန်များကို ပံ့ပိုးပေးပါသည်။</p>
+    </div>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">ပင်မစာမျက်နှာ</a></li>
-      <li><a href="about.html">အကြောင်းအရာ</a></li>
-      <li><a href="services.html">ဝန်ဆောင်မှုများ</a></li>
-      <li><a href="contact.html">ဆက်သွယ်ရန်</a></li>
-    </ul>
-  </nav>
+    <script>
+        let isEnglish = true;
 
-  <main>
-    <h2>ကျွန်ုပ်တို့အကြောင်း</h2>
-    <p>ကိုတင်အေးမူလီဘောလ်နပ်သည် မြန်မာနိုင်ငံတွင် လူကြိုက်များသောနပ်ပစ္စည်းရောင်းဝယ်ရေးလုပ်ငန်းတစ်ခုဖြစ်ပြီး၊ 
-      ကျွန်ုပ်တို့၏ထုတ်ကုန်များသည် အရည်အသွေးမြင့်နှင့် အသုံးချလွယ်ကူသော ပစ္စည်းများဖြစ်ပါသည်။</p>
-
-    <h3>ကျွန်ုပ်တို့၏ရည်မှတ်</h3>
-    <p>ကျွန်ုပ်တို့၏ရည်မှတ်မှာ မြန်မာနိုင်ငံရှိ စက်မှုလုပ်ငန်းများနှင့် အခြားအဖွဲ့အစည်းများအား
-      ကောင်းမွန်သောနပ်ပစ္စည်းများကို ပေးပို့ရန်ဖြစ်ပါသည်။</p>
-
-    <h3>အတိတ်နောက်ခံ</h3>
-    <p>ကျွန်ုပ်တို့သည် အနှစ် ၅၀ ကျော်အတွင်း ဆက်ဆံရေးကို ဖွံ့ဖြိုးတိုးတက်စေရန် 
-      ၅၅၀ ကျော်သောအချိန်အတွင်း အဓိကမှ စီးပွားရေးလုပ်ငန်းများနှင့် ပူးပေါင်းလျက်ရှိပါသည်။</p>
-
-    <h3>ကျွန်ုပ်တို့၏တန်ဖိုးများ</h3>
-    <ul>
-      <li>အရည်အသွေး</li>
-      <li>ထိရောက်မှု</li>
-      <li>ထိရောက်သော ဝန်ဆောင်မှု</li>
-    </ul>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Ko Tin Aye Muli Boltnut</p>
-  </footer>
+        document.getElementById('fontChangeBtn').addEventListener('click', function() {
+            if (isEnglish) {
+                document.getElementById('content-en').classList.add('hidden');
+                document.getElementById('content-mm').classList.remove('hidden');
+                isEnglish = false;
+            } else {
+                document.getElementById('content-mm').classList.add('hidden');
+                document.getElementById('content-en').classList.remove('hidden');
+                isEnglish = true;
+            }
+        });
+    </script>
 </body>
 </html>
