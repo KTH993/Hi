@@ -1,32 +1,45 @@
 <!DOCTYPE html>
-<html lang="my">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ဝန်ဆောင်မှုများ</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .hidden { display: none; }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>ကိုတင်အေးမူလီဘောလ်နပ်</h1>
-  </header>
+    <button id="fontChangeBtn">Change Font</button>
+    
+    <!-- English Content -->
+    <div id="content-en" class="content">
+        <h1>Our Services</h1>
+        <p>We offer a wide range of services for our customers.</p>
+    </div>
+    
+    <!-- Myanmar Content -->
+    <div id="content-mm" class="content hidden">
+        <h1>ကျွန်တော်တို့ဝန်ဆောင်မှုများ</h1>
+        <p>ကျွန်တော်တို့သည် သင့်အား ဝန်ဆောင်မှုများစွာကို ပံ့ပိုးပေးပါသည်။</p>
+    </div>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">ပင်မစာမျက်နှာ</a></li>
-      <li><a href="about.html">အကြောင်းအရာ</a></li>
-      <li><a href="services.html">ဝန်ဆောင်မှုများ</a></li>
-      <li><a href="contact.html">ဆက်သွယ်ရန်</a></li>
-    </ul>
-  </nav>
+    <script>
+        let isEnglish = true;
 
-  <main>
-    <h2>ဝန်ဆောင်မှုများ</h2>
-    <p>ကျွန်ုပ်တို့၏ ဝန်ဆောင်မှုများကို ဤနေရာတွင် ဖော်ပြထားပါသည်။</p>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Ko Tin Aye Muli Boltnut</p>
-  </footer>
+        document.getElementById('fontChangeBtn').addEventListener('click', function() {
+            if (isEnglish) {
+                document.getElementById('content-en').classList.add('hidden');
+                document.getElementById('content-mm').classList.remove('hidden');
+                isEnglish = false;
+            } else {
+                document.getElementById('content-mm').classList.add('hidden');
+                document.getElementById('content-en').classList.remove('hidden');
+                isEnglish = true;
+            }
+        });
+    </script>
 </body>
 </html>
