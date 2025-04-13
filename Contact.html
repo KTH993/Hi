@@ -1,41 +1,45 @@
 <!DOCTYPE html>
-<html lang="my">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ဆက်သွယ်ရန်</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .hidden { display: none; }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>ကိုတင်အေးမူလီဘောလ်နပ်</h1>
-  </header>
-
-  <nav>
-    <ul>
-      <li><a href="index.html">ပင်မစာမျက်နှာ</a></li>
-      <li><a href="about.html">အကြောင်းအရာ</a></li>
-      <li><a href="services.html">ဝန်ဆောင်မှုများ</a></li>
-      <li><a href="contact.html">ဆက်သွယ်ရန်</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <h2>ဆက်သွယ်ရန်</h2>
-    <p>ကျွန်ုပ်တို့နှင့် ဆက်သွယ်လိုပါက အောက်ပါ ဖော်ပြထားသော အချက်အလက်များကို အသုံးပြုနိုင်ပါသည်။</p>
+    <button id="fontChangeBtn">Change Font</button>
     
-    <h3>ဖုန်းနံပါတ်:</h3>
-    <p>09-XXXX-XXXX</p>
+    <!-- English Content -->
+    <div id="content-en" class="content">
+        <h1>Contact Us</h1>
+        <p>You can reach us via email or phone.</p>
+    </div>
     
-    <h3>အီးမေးလ်လိပ်စာ:</h3>
-    <p>info@kotinaye.com</p>
-    
-    <h3>လိပ်စာ:</h3>
-    <p>123 မြန်မာပြည်၊ မြို့အမည်၊ အိမ်နံပါတ် XX</p>
-  </main>
+    <!-- Myanmar Content -->
+    <div id="content-mm" class="content hidden">
+        <h1>ကျွန်တော်တို့ထံ ဆက်သွယ်ပါ</h1>
+        <p>သင်သည် အီးမေးလ် သို့မဟုတ် ဖုန်းဖြင့် ကျွန်တော်တို့ကို ဆက်သွယ်နိုင်ပါသည်။</p>
+    </div>
 
-  <footer>
-    <p>&copy; 2025 Ko Tin Aye Muli Boltnut</p>
-  </footer>
+    <script>
+        let isEnglish = true;
+
+        document.getElementById('fontChangeBtn').addEventListener('click', function() {
+            if (isEnglish) {
+                document.getElementById('content-en').classList.add('hidden');
+                document.getElementById('content-mm').classList.remove('hidden');
+                isEnglish = false;
+            } else {
+                document.getElementById('content-mm').classList.add('hidden');
+                document.getElementById('content-en').classList.remove('hidden');
+                isEnglish = true;
+            }
+        });
+    </script>
 </body>
 </html>
