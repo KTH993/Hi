@@ -1,39 +1,45 @@
 <!DOCTYPE html>
-<html lang="my">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ko Tin Aye Muli Boltnut</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .hidden { display: none; }
+    </style>
 </head>
 <body>
-  <!-- Fixed Sidebar -->
-  <aside style="width: 200px; background-color: #003366; color: white; position: fixed; height: 100vh; padding: 20px;">
-    <h1 style="color: gold;">Ko Tin Aye</h1>
-    <p>မူလီဘောလ်နပ် ရောင်းဝယ်ရေး</p>
-    <nav>
-      <ul style="list-style: none; padding: 0;">
-        <li><a href="index.html" style="color: #b0d4f1;">ပင်မစာမျက်နှာ</a></li>
-        <li><a href="about.html" style="color: #b0d4f1;">အကြောင်းအရာ</a></li>
-        <li><a href="services.html" style="color: #b0d4f1;">ဝန်ဆောင်မှုများ</a></li>
-        <li><a href="contact.html" style="color: #b0d4f1;">ဆက်သွယ်ရန်</a></li>
-      </ul>
-    </nav>
-    <!-- Font Size Change Button -->
-    <button style="margin-top: 20px; background-color: green; color: white;">Font Change</button>
-  </aside>
+    <button id="fontChangeBtn">Change Font</button>
+    
+    <!-- English Content -->
+    <div id="content-en" class="content">
+        <h1>Welcome to My Website</h1>
+        <p>This is the English version of the homepage.</p>
+    </div>
+    
+    <!-- Myanmar Content -->
+    <div id="content-mm" class="content hidden">
+        <h1>ကျွန်တော်၏ ဝက်ဘ်ဆိုက်သို့ ကြိုဆိုပါတယ်</h1>
+        <p>ဒီဟာက မြန်မာဗားရှင်းဟာ တင်ထားပါသည်။</p>
+    </div>
 
-  <!-- Content Area -->
-  <div style="margin-left: 220px; padding: 20px;">
-    <main style="background-color: white;">
-      <h2 style="font-size: 24px; font-weight: bold;">မင်္ဂလာပါ</h2>
-      <p style="font-size: 18px;">သင့်အား ကြိုဆိုပါသည်။ မူလီနပ်ပစ္စည်းများကို ယနေ့မှစပြီး မှန်ကန်သောစျေးနှုန်းဖြင့် ဝယ်ယူနိုင်ပါပြီ။</p>
-    </main>
+    <script>
+        let isEnglish = true;
 
-    <!-- Footer -->
-    <footer style="background-color: #003366; color: white; padding: 10px; margin-top: 20px;">
-      &copy; 2025 Ko Tin Aye Muli Boltnut
-    </footer>
-  </div>
+        document.getElementById('fontChangeBtn').addEventListener('click', function() {
+            if (isEnglish) {
+                document.getElementById('content-en').classList.add('hidden');
+                document.getElementById('content-mm').classList.remove('hidden');
+                isEnglish = false;
+            } else {
+                document.getElementById('content-mm').classList.add('hidden');
+                document.getElementById('content-en').classList.remove('hidden');
+                isEnglish = true;
+            }
+        });
+    </script>
 </body>
 </html>
