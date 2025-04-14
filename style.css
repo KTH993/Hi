@@ -12,7 +12,7 @@ body {
 nav {
   background-color: #2980b9; /* Slightly darker blue for the nav */
   border-bottom: 1px solid #bdc3c7; /* Light grey border for separation */
-  padding: 30px 40px; /* Increased height: original 10px => now 30px */
+  padding: 30px 40px; /* Increased height */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,15 +24,20 @@ nav {
 
 /* Navigation Links */
 nav a {
+  background-color: #2980b9;
   color: white;
-  margin: 0 20px;
+  margin: 0 12px;
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  background-color: #fff;
+  color: #2980b9;
 }
 
 /* Logo (inside header, not nav) */
@@ -52,27 +57,40 @@ nav a:hover {
 }
 
 .lang-switcher button {
-  background-color: #f0f0f0;
+  padding: 8px 14px;
+  border-radius: 20px;
   border: none;
-  border-radius: 50%; /* Circular button */
-  padding: 10px;
-  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.lang-switcher button:hover {
-  background-color: #ddd;
+.lang-switcher button.active {
+  background-color: white;
+  color: #2980b9;
 }
 
-.lang-switcher button:focus {
-  outline: none;
+.lang-switcher button:not(.active) {
+  background-color: #2980b9;
+  color: white;
 }
 
 /* Content Container (prevent overlapping with fixed nav) */
 .content {
   padding-top: 120px; /* Adjust for enlarged fixed nav height */
   padding-bottom: 60px;
+}
+
+/* Section spacing fix */
+section {
+  margin-bottom: 60px;
+  scroll-margin-top: 120px;
+}
+
+/* Paragraph spacing */
+.white-layer p {
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
 /* --- Responsive Enhancements --- */
