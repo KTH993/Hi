@@ -8,28 +8,34 @@ body {
   scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
-/* Navigation Bar */
+/* Navigation Bar (Fixed and Enlarged) */
 nav {
   background-color: #2980b9; /* Slightly darker blue for the nav */
   border-bottom: 1px solid #bdc3c7; /* Light grey border for separation */
-  padding: 10px;
+  padding: 30px 40px; /* Increased height: original 10px => now 30px */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
 }
 
+/* Navigation Links */
 nav a {
   color: white;
-  margin-right: 15px;
+  margin: 0 20px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 16px;
 }
 
 nav a:hover {
   text-decoration: underline;
 }
 
-/* Logo */
+/* Logo (inside header, not nav) */
 .logo {
   color: gold;
   font-size: 24px;
@@ -39,8 +45,8 @@ nav a:hover {
 /* Language Switcher */
 .lang-switcher {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   display: flex;
   gap: 10px;
 }
@@ -63,19 +69,28 @@ nav a:hover {
   outline: none;
 }
 
+/* Content Container (prevent overlapping with fixed nav) */
+.content {
+  padding-top: 120px; /* Adjust for enlarged fixed nav height */
+  padding-bottom: 60px;
+}
+
 /* --- Responsive Enhancements --- */
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    padding: 25px;
   }
 
   nav a {
-    margin: 5px 0;
+    margin: 8px 0;
   }
 
   .lang-switcher {
-    text-align: center;
+    position: static;
+    margin-top: 10px;
+    justify-content: center;
   }
 
   .lang-switcher button {
@@ -86,16 +101,17 @@ nav a:hover {
 
 @media (min-width: 601px) and (max-width: 1024px) {
   nav {
-    padding: 15px;
+    padding: 25px 30px;
   }
 
   .lang-switcher {
-    text-align: right;
+    right: 15px;
+    top: 15px;
   }
 }
 
 @media (min-width: 1025px) {
   nav {
-    padding: 20px 40px;
+    padding: 30px 40px;
   }
 }
