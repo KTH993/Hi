@@ -1,12 +1,19 @@
+// Shrink header on scroll
 const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 30) {
+    header.classList.add('shrink');
+  } else {
+    header.classList.remove('shrink');
+  }
+});
+
+// Language toggle
 const engBtn = document.getElementById('engBtn');
 const mmBtn = document.getElementById('mmBtn');
 const engTexts = document.querySelectorAll('.eng');
 const mmTexts = document.querySelectorAll('.mm');
-const navLinks = document.querySelectorAll('.nav-btn');
-const sections = document.querySelectorAll('section');
 
-// Language toggle
 function setLanguage(lang) {
   if (lang === 'eng') {
     engBtn.classList.add('active');
@@ -20,15 +27,21 @@ function setLanguage(lang) {
     engTexts.forEach(el => el.style.display = 'none');
   }
 }
+
 engBtn.addEventListener('click', () => setLanguage('eng'));
 mmBtn.addEventListener('click', () => setLanguage('mm'));
 
-// ScrollSpy for nav
+// Scroll spy for nav highlighting
+const navLinks = document.querySelectorAll('.nav-btn');
+const sections = document.querySelectorAll('section');
+
 window.addEventListener('scroll', () => {
-  const scrollPos = window.scrollY + 200; // Adjust for fixed header
+  let scrollPos = window.scrollY + 180; // match content padding
   sections.forEach(section => {
-    if (scrollPos >= section.offsetTop &&
-        scrollPos < section.offsetTop + section.offsetHeight) {
+    if (
+      scrollPos >= section.offsetTop &&
+      scrollPos < section.offsetTop + section.offsetHeight
+    ) {
       navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${section.id}`) {
