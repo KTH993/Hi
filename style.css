@@ -6,6 +6,7 @@
 
 body {
   font-family: Arial, sans-serif;
+  overflow-x: hidden;
   background-color: #ecf0f1;
   color: #2c3e50;
   scroll-behavior: smooth;
@@ -18,94 +19,92 @@ body {
   left: 0;
   width: 100%;
   background-color: #3498db;
-  padding: 40px 40px;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 999;
-  transition: padding 0.3s ease;
+  padding: 30px 20px;
 }
 
-.header.shrink {
-  padding: 15px 30px;
-}
-
-.header-center {
+.logo-area {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10px;
 }
 
 .logo {
-  font-size: 32px;
+  font-size: 30px;
 }
 
 .name {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
   margin-top: 5px;
+  color: white;
 }
 
 /* Language toggle */
 .lang-switcher {
   position: absolute;
   top: 10px;
-  left: 10px;
+  right: 10px;
   display: flex;
   gap: 10px;
 }
 
 .lang-btn {
-  padding: 8px 16px;
-  border: none;
+  padding: 6px 14px;
   border-radius: 20px;
-  background-color: #3498db;
-  color: white;
+  border: none;
   font-weight: bold;
+  background-color: #fff;
+  color: #3498db;
   cursor: pointer;
 }
 
 .lang-btn.active {
-  background-color: white;
-  color: #3498db;
+  background-color: #2980b9;
+  color: white;
 }
 
 /* Nav Buttons */
 .nav-links {
-  margin-top: 20px;
   display: flex;
-  gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 15px;
+  gap: 15px;
 }
 
 .nav-btn {
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 20px;
   text-decoration: none;
   font-weight: bold;
-  background-color: #3498db;
-  color: white;
+  background-color: #fff;
+  color: #3498db;
   transition: all 0.3s ease;
 }
 
 .nav-btn.active {
-  background-color: white;
-  color: #3498db;
+  background-color: #2980b9;
+  color: white;
 }
 
-/* Main Content */
+/* Content */
 .content {
   background-color: white;
-  padding: 160px 20px 60px;
+  padding: 200px 20px 60px;
+  max-width: 100%;
 }
 
 section {
-  padding: 100px 0;
-  border-bottom: 1px solid #ccc;
+  padding: 80px 0;
+  border-bottom: 1px solid #ddd;
+  max-width: 100%;
 }
 
-/* Hide inactive language */
 .mm {
   display: none;
 }
@@ -113,24 +112,31 @@ section {
 /* Responsive */
 @media (max-width: 768px) {
   .name {
-    font-size: 22px;
+    font-size: 20px;
   }
-  .logo {
-    font-size: 26px;
-  }
+
   .nav-btn {
     font-size: 14px;
+    padding: 6px 12px;
   }
 }
 
 @media (max-width: 480px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lang-switcher {
+    top: 5px;
+    right: 5px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
   .name {
     font-size: 18px;
-  }
-  .logo {
-    font-size: 22px;
-  }
-  .nav-btn {
-    font-size: 12px;
   }
 }
