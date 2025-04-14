@@ -241,4 +241,15 @@
       document.getElementById('btn-' + lang).classList.add('active-lang');
     }
 
-    window.addEvent
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('pageHeader');
+      if (window.scrollY > 100) {
+        header.classList.add('shrink');
+      } else {
+        header.classList.remove('shrink');
+      }
+    });
+  </script>
+
+</body>
+</html>
