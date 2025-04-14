@@ -77,6 +77,49 @@
       display: block;
     }
 
+    /* Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Navigation Bar Styles */
+    nav {
+      background-color: #005b96;
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      text-transform: uppercase;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #003c63;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 60px 0;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Mobile responsiveness */
     @media (max-width: 600px) {
       header h1 {
         font-size: 20px;
@@ -99,19 +142,60 @@
     </div>
   </header>
 
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Content Area -->
   <div class="container">
     <div id="en" class="en active">
-      <h2>Welcome!</h2>
-      <p>Welcome to Our Ko Tin Aye Bolts & Nuts Trading! We’re happy to welcome you and introduce our shop. We’re a passionate team dedicated to bringing quality and reliability to every customer we serve. Whether you're browsing or ready to order, we’re here to help you find exactly what you need.</p>
-      <p>We specialize in a wide range of fasteners—bolts, nuts, screws, washers, and more. All our products are carefully selected for durability and performance, ensuring our customers get dependable quality they can trust. Whether you're buying in bulk or for a specific project, we’ve got the right solution.</p>
-      <p>Customers choose us because we offer more than just products—we provide value, responsive service, and genuine care. With transparent pricing, consistent stock, and helpful support, we make it easy for you to get what you need, when you need it.</p>
+      <section id="home">
+        <h2>Welcome!</h2>
+        <p>Welcome to Our Ko Tin Aye Bolts & Nuts Trading! We’re happy to welcome you and introduce our shop. We’re a passionate team dedicated to bringing quality and reliability to every customer we serve. Whether you're browsing or ready to order, we’re here to help you find exactly what you need.</p>
+        <p>We specialize in a wide range of fasteners—bolts, nuts, screws, washers, and more. All our products are carefully selected for durability and performance, ensuring our customers get dependable quality they can trust. Whether you're buying in bulk or for a specific project, we’ve got the right solution.</p>
+        <p>Customers choose us because we offer more than just products—we provide value, responsive service, and genuine care. With transparent pricing, consistent stock, and helpful support, we make it easy for you to get what you need, when you need it.</p>
+      </section>
+
+      <section id="about">
+        <h2>About Us</h2>
+        <p>We’ve been in the fastener business for over 10 years, specializing in high-quality bolts, nuts, and other essential hardware for every project. Our goal is to provide our customers with the best products and exceptional service.</p>
+      </section>
+
+      <section id="services">
+        <h2>Our Services</h2>
+        <p>We offer retail and wholesale options, catering to businesses and individual customers. Fast delivery and excellent customer service make us the best choice for all your fastener needs.</p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <p>You can reach us via phone, email, or Facebook. Let us know your needs, and we'll make sure you get the best service possible!</p>
+      </section>
     </div>
 
     <div id="mm" class="mm">
-      <h2>ကြိုဆိုပါတယ်!</h2>
-      <p>ကျွန်ုပ်တို့၏ ကိုတင်အေးမူလီဘိုလ်နပ်ရောင်းဝယ်ရေးမှ ကြိုဆိုပါတယ်။ သုံးစွဲသူအပေါင်းတို့အား ကျွန်ုပ်တို့၏လုပ်ငန်းကို မိတ်ဆက်နိုင်ရန် ဝမ်းမြောက်ပျော်ရွှင်စွာ ကြိုဆိုလိုက်ပါတယ်။ ကျွန်ုပ်တို့သည် သုံးစွဲသူတိုင်းအတွက် အရည်အသွေးမြင့် ဝန်ဆောင်မှုနှင့် ယုံကြည်စိတ်ချရမှုကို အဓိကထားသော စိတ်အားထက်သန်အဖွဲ့ဖြစ်ပါသည်။ မိတ်ဆွေတို့လိုအပ်သည့် နပ်ပစ္စည်းများကို တိကျမှန်ကန်စွာ ဖြည့်ဆည်းနိုင်ရန်အတွက် အမြဲသင့်တော်စွာ အဆင်သင့်ဖြစ်နေပါသည်။</p>
-      <p>ကျွန်ုပ်တို့သည် နပ်တိုင်များ၊ နပ်ခေါင်းများ၊ စကူများ၊ ဝါရှာများနှင့် ဆက်စပ်ပစ္စည်းများကို အဓိကပေးဝေပါသည်။ ထုတ်ကုန်တိုင်းသည် ရေရှည်ခံနိုင်မှုနှင့် စွမ်းဆောင်နိုင်စွမ်းရှိရန် ဂရုတစိုက်ရွေးချယ်ထားပါသည်။ ပမာဏအများကြီးဝယ်ယူလိုသူများဖြစ်စေ၊ အနည်းငယ်လိုအပ်သူများဖြစ်စေ — ကျွန်ုပ်တို့အနေဖြင့် အချိန်မရွေး တက်ကြွစွာ ဖြေရှင်းပေးနိုင်ပါတယ်။</p>
-      <p>ကျွန်ုပ်တို့ကို သုံးစွဲသူများက ရွေးချယ်ကြခြင်းမှာ — စျေးနှုန်းမြင့်မားခြင်းမရှိဘဲ တန်ဖိုးရှိသောဝန်ဆောင်မှုများ၊ တုံ့ပြန်မှုမြန်နှုန်းနှင့် ပွင့်လင်းမြင်သာသောပုံစံတို့ကြောင့် ဖြစ်ပါသည်။ မိတ်ဆွေတို့လိုအပ်သောအချိန်တွင်၊ အလိုအလျှောက် ရရှိနိုင်စေရန် — ကျွန်ုပ်တို့၏ အဖွဲ့သည် တာဝန်ယူစွာဖြင့် ဝန်ဆောင်မှုများ ပေးလျက်ရှိပါသည်။</p>
+      <section id="home">
+        <h2>ကြိုဆိုပါတယ်!</h2>
+        <p>ကျွန်ုပ်တို့၏ ကိုတင်အေးမူလီဘိုလ်နပ်ရောင်းဝယ်ရေးမှ ကြိုဆိုပါတယ်။ သုံးစွဲသူအပေါင်းတို့အား ကျွန်ုပ်တို့၏လုပ်ငန်းကို မိတ်ဆက်နိုင်ရန် ဝမ်းမြောက်ပျော်ရွှင်စွာ ကြိုဆိုလိုက်ပါတယ်။ ကျွန်ုပ်တို့သည် သုံးစွဲသူတိုင်းအတွက် အရည်အသွေးမြင့် ဝန်ဆောင်မှုနှင့် ယုံကြည်စိတ်ချရမှုကို အဓိကထားသော စိတ်အားထက်သန်အဖွဲ့ဖြစ်ပါသည်။</p>
+      </section>
+
+      <section id="about">
+        <h2>အကြောင်းအရာ</h2>
+        <p>ကျွန်ုပ်တို့သည် စက်ပစ္စည်းလုပ်ငန်းကို ၁၀ နှစ်ကျော် ဆောင်ရွက်နေပြီ။ အရည်အသွေးမြင့်သော နပ်တိုင်များ၊ နပ်ခေါင်းများနှင့် အခြားအကြီးစားပစ္စည်းများအတွက် အထူးပြုလုပ်ပါသည်။</p>
+      </section>
+
+      <section id="services">
+        <h2>ဝန်ဆောင်မှုများ</h2>
+        <p>ကျွန်ုပ်တို့သည် လက်လီနှင့် လက်ကားရောင်းဝယ်မှု၊ ပို့ဆောင်ရေး စသဖြင့် စွမ်းဆောင်မှုများ ရရှိနိုင်ပါသည်။</p>
+      </section>
+
+      <section id="contact">
+        <h2>ဆက်သွယ်ရန်</h2>
+        <p>ဖုန်း၊ အီးမေးလ် သို့မဟုတ် Facebook မှတဆင့် ဆက်သွယ်နိုင်ပါသည်။</p>
+      </section>
     </div>
   </div>
 
