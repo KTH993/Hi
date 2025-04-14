@@ -1,29 +1,50 @@
 // Shrink header on scroll
-window.addEventListener("scroll", () => {
-  const header = document.querySelector(".header");
-  if (window.scrollY > 50) {
-    header.classList.add("shrink");
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 30) {
+    header.classList.add('shrink');
   } else {
-    header.classList.remove("shrink");
+    header.classList.remove('shrink');
   }
 });
 
-// Language switcher button active toggle
-const langButtons = document.querySelectorAll(".lang-btn");
-langButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    langButtons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    // You can add your language switching logic here
-    console.log("Language selected:", btn.dataset.lang);
-  });
+// Toggle language
+const engBtn = document.getElementById('engBtn');
+const mmBtn = document.getElementById('mmBtn');
+const engTexts = document.querySelectorAll('.eng');
+const mmTexts = document.querySelectorAll('.mm');
+
+engBtn.addEventListener('click', () => {
+  engBtn.classList.add('active');
+  mmBtn.classList.remove('active');
+  engTexts.forEach(p => p.style.display = 'block');
+  mmTexts.forEach(p => p.style.display = 'none');
 });
 
-// Navigation link active state
-const navLinks = document.querySelectorAll(".nav-link");
-navLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.forEach(l => l.classList.remove("active"));
-    link.classList.add("active");
+mmBtn.addEventListener('click', () => {
+  mmBtn.classList.add('active');
+  engBtn.classList.remove('active');
+  engTexts.forEach(p => p.style.display = 'none');
+  mmTexts.forEach(p => p.style.display = 'block');
+});
+
+// Active nav highlighting based on scroll
+const navLinks = document.querySelectorAll('.nav-btn');
+const sections = document.querySelectorAll('section');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
   });
 });
