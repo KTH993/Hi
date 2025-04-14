@@ -43,6 +43,11 @@
       right: 10px;
       display: flex;
       gap: 10px;
+      transition: top 0.3s ease;
+    }
+
+    header.shrink .language-toggle {
+      top: 5px;
     }
 
     .language-toggle button {
@@ -70,12 +75,17 @@
 
     nav {
       position: sticky;
-      top: 120px;
+      top: calc(60px + 10px);
       background-color: #005b96;
       display: flex;
       justify-content: center;
       padding: 10px;
       z-index: 999;
+      transition: top 0.3s ease;
+    }
+
+    header.shrink + nav {
+      top: calc(30px + 10px);
     }
 
     nav a {
