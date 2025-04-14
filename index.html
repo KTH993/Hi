@@ -11,12 +11,32 @@
       padding: 0;
       background: #f5f5f5;
     }
+
     header {
+      position: sticky;
+      top: 0;
       background-color: #005b96;
       color: white;
-      padding: 1rem;
       text-align: center;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      padding: 30px 10px;
     }
+
+    header.shrink {
+      padding: 10px 10px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      transition: font-size 0.3s ease;
+    }
+
+    header.shrink h1 {
+      font-size: 18px;
+    }
+
     .language-toggle {
       position: absolute;
       top: 10px;
@@ -24,6 +44,22 @@
       display: flex;
       gap: 10px;
     }
+
+    .language-toggle button {
+      padding: 6px 12px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: #ffffff;
+      color: #005b96;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    .language-toggle button:hover {
+      background-color: #e0e0e0;
+    }
+
     .container {
       max-width: 900px;
       margin: 20px auto;
@@ -32,25 +68,20 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
+
     .mm, .en {
       display: none;
     }
+
     .active {
       display: block;
     }
-    button {
-      padding: 8px 16px;
-      margin: 0 5px;
-      font-size: 14px;
-      cursor: pointer;
-      background-color: #ddd;
-      border: none;
-      border-radius: 50%;
-    }
-    button:hover {
-      background-color: #ccc;
-    }
+
     @media (max-width: 600px) {
+      header h1 {
+        font-size: 20px;
+      }
+
       .container {
         margin: 10px;
         padding: 15px;
@@ -59,7 +90,8 @@
   </style>
 </head>
 <body>
-  <header>
+
+  <header id="pageHeader">
     <h1>Ko Tin Aye Bolts & Nuts Trading</h1>
     <div class="language-toggle">
       <button onclick="showContent('en')">Eng</button>
@@ -82,14 +114,23 @@
       <p>ကျွန်ုပ်တို့ကို သုံးစွဲသူများက ရွေးချယ်ကြခြင်းမှာ — စျေးနှုန်းမြင့်မားခြင်းမရှိဘဲ တန်ဖိုးရှိသောဝန်ဆောင်မှုများ၊ တုံ့ပြန်မှုမြန်နှုန်းနှင့် ပွင့်လင်းမြင်သာသောပုံစံတို့ကြောင့် ဖြစ်ပါသည်။ မိတ်ဆွေတို့လိုအပ်သောအချိန်တွင်၊ အလိုအလျှောက် ရရှိနိုင်စေရန် — ကျွန်ုပ်တို့၏ အဖွဲ့သည် တာဝန်ယူစွာဖြင့် ဝန်ဆောင်မှုများ ပေးလျက်ရှိပါသည်။</p>
     </div>
   </div>
-  
-  <!-- Script file with toggle function -->
+
   <script>
     function showContent(lang) {
       document.querySelector('.en').classList.remove('active');
       document.querySelector('.mm').classList.remove('active');
       document.getElementById(lang).classList.add('active');
     }
+
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('pageHeader');
+      if (window.scrollY > 60) {
+        header.classList.add('shrink');
+      } else {
+        header.classList.remove('shrink');
+      }
+    });
   </script>
+
 </body>
 </html>
