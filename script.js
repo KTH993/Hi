@@ -8,43 +8,46 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Toggle language
+// Language toggle
 const engBtn = document.getElementById('engBtn');
 const mmBtn = document.getElementById('mmBtn');
 const engTexts = document.querySelectorAll('.eng');
 const mmTexts = document.querySelectorAll('.mm');
 
-engBtn.addEventListener('click', () => {
-  engBtn.classList.add('active');
-  mmBtn.classList.remove('active');
-  engTexts.forEach(p => p.style.display = 'block');
-  mmTexts.forEach(p => p.style.display = 'none');
-});
+function setLanguage(lang) {
+  if (lang === 'eng') {
+    engBtn.classList.add('active');
+    mmBtn.classList.remove('active');
+    engTexts.forEach(el => el.style.display = 'block');
+    mmTexts.forEach(el => el.style.display = 'none');
+  } else {
+    mmBtn.classList.add('active');
+    engBtn.classList.remove('active');
+    mmTexts.forEach(el => el.style.display = 'block');
+    engTexts.forEach(el => el.style.display = 'none');
+  }
+}
 
-mmBtn.addEventListener('click', () => {
-  mmBtn.classList.add('active');
-  engBtn.classList.remove('active');
-  engTexts.forEach(p => p.style.display = 'none');
-  mmTexts.forEach(p => p.style.display = 'block');
-});
+engBtn.addEventListener('click', () => setLanguage('eng'));
+mmBtn.addEventListener('click', () => setLanguage('mm'));
 
-// Active nav highlighting based on scroll
+// Scroll spy for nav highlighting
 const navLinks = document.querySelectorAll('.nav-btn');
 const sections = document.querySelectorAll('section');
 
 window.addEventListener('scroll', () => {
-  let current = '';
+  let scrollPos = window.scrollY + 150;
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    if (pageYOffset >= sectionTop) {
-      current = section.getAttribute('id');
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${current}`) {
-      link.classList.add('active');
+    if (
+      scrollPos >= section.offsetTop &&
+      scrollPos < section.offsetTop + section.offsetHeight
+    ) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${section.id}`) {
+          link.classList.add('active');
+        }
+      });
     }
   });
 });
