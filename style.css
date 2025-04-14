@@ -1,4 +1,4 @@
-"/* Base Styles */
+/* Base Styles */
 body {
   background-color: #3498db; /* Bright Blue */
   color: white;
@@ -17,13 +17,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: height 0.3s ease, padding 0.3s ease;
-  padding: 30px 40px;
+  transition: padding 0.3s ease;
+  padding: 30px 40px 20px;
 }
 
 /* Shrink on scroll */
 .header.shrink {
-  padding: 15px 30px;
+  padding: 15px 30px 10px;
 }
 
 /* Top bar inside header */
@@ -146,6 +146,6 @@ section {
 
 @media (min-width: 1025px) {
   .header {
-    padding: 30px 40px;
+    padding: 30px 40px 20px;
   }
-}" ယခင် Styleဖိုင်ကို ယခုUpdateေပါင်းထည့်ပေးပါ
+}
