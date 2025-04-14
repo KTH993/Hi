@@ -20,11 +20,11 @@
       text-align: center;
       transition: all 0.3s ease;
       z-index: 1000;
-      padding: 60px 10px; /* increased height */
+      padding: 60px 10px;
     }
 
     header.shrink {
-      padding: 30px 10px; /* also doubled for shrink */
+      padding: 30px 10px;
     }
 
     header h1 {
@@ -49,23 +49,29 @@
       padding: 6px 12px;
       font-size: 14px;
       cursor: pointer;
-      background-color: #ffffff;
-      color: #005b96;
       border: none;
       border-radius: 20px;
       font-weight: bold;
     }
 
-    .language-toggle button:hover {
-      background-color: #e0e0e0;
+    .language-toggle button.active-lang {
+      background-color: #ffffff;
+      color: #005b96;
     }
 
-    /* Navigation Bar Styles */
+    .language-toggle button:not(.active-lang) {
+      background-color: #005b96;
+      color: #ffffff;
+    }
+
+    .language-toggle button:hover {
+      opacity: 0.85;
+    }
+
     nav {
       position: sticky;
-      top: 120px; /* Adjust according to new header height */
+      top: 120px;
       background-color: #005b96;
-      color: white;
       display: flex;
       justify-content: center;
       padding: 10px;
@@ -78,7 +84,10 @@
       padding: 12px 20px;
       font-size: 16px;
       text-transform: uppercase;
+      border-radius: 20px;
+      margin: 0 5px;
       transition: background-color 0.3s;
+      background-color: #005b96;
     }
 
     nav a:hover {
@@ -87,8 +96,8 @@
 
     .container {
       max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
+      margin: 40px auto;
+      padding: 40px;
       background-color: white;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -102,14 +111,17 @@
       display: block;
     }
 
-    /* Smooth scroll behavior */
     html {
       scroll-behavior: smooth;
     }
 
-    /* Section Styling */
     section {
-      padding: 60px 0;
+      padding: 40px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    section:last-child {
+      border-bottom: none;
     }
 
     h2 {
@@ -120,9 +132,9 @@
     p {
       font-size: 16px;
       line-height: 1.6;
+      margin-bottom: 15px;
     }
 
-    /* Mobile responsiveness */
     @media (max-width: 600px) {
       header h1 {
         font-size: 20px;
@@ -132,6 +144,15 @@
         margin: 10px;
         padding: 15px;
       }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 5px 0;
+      }
     }
   </style>
 </head>
@@ -140,12 +161,11 @@
   <header id="pageHeader">
     <h1>Ko Tin Aye Bolts & Nuts Trading</h1>
     <div class="language-toggle">
-      <button onclick="showContent('en')">Eng</button>
-      <button onclick="showContent('mm')">MM</button>
+      <button id="btn-en" onclick="showContent('en')">Eng</button>
+      <button id="btn-mm" onclick="showContent('mm')">MM</button>
     </div>
   </header>
 
-  <!-- Navigation -->
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
@@ -153,7 +173,6 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Content Area -->
   <div class="container">
     <div id="en" class="en active">
       <section id="home">
@@ -206,7 +225,10 @@
     function showContent(lang) {
       document.querySelector('.en').classList.remove('active');
       document.querySelector('.mm').classList.remove('active');
+      document.getElementById('btn-en').classList.remove('active-lang');
+      document.getElementById('btn-mm').classList.remove('active-lang');
       document.getElementById(lang).classList.add('active');
+      document.getElementById('btn-' + lang).classList.add('active-lang');
     }
 
     window.addEventListener('scroll', () => {
