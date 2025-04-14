@@ -8,8 +8,23 @@ function showContent(lang) {
   document.getElementById(lang).classList.add('active');
 }
 
+// Function to toggle the language between English and Burmese
+const langToggleBtn = document.getElementById('langToggle');
+langToggleBtn.addEventListener('click', () => {
+  const currentLang = langToggleBtn.textContent.trim();
+
+  if (currentLang === 'Eng / MM') {
+    showContent('mm');
+    langToggleBtn.textContent = 'MM / Eng';
+  } else {
+    showContent('en');
+    langToggleBtn.textContent = 'Eng / MM';
+  }
+});
+
 // Optional: If you want to set the default language when the page loads
 window.onload = function() {
   // Set default language to English
   showContent('en');
-}
+  langToggleBtn.textContent = 'Eng / MM'; // Ensure the button shows 'Eng / MM' initially
+};
