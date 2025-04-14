@@ -20,11 +20,11 @@
       text-align: center;
       transition: all 0.3s ease;
       z-index: 1000;
-      padding: 30px 10px;
+      padding: 60px 10px; /* increased height */
     }
 
     header.shrink {
-      padding: 10px 10px;
+      padding: 30px 10px; /* also doubled for shrink */
     }
 
     header h1 {
@@ -60,6 +60,31 @@
       background-color: #e0e0e0;
     }
 
+    /* Navigation Bar Styles */
+    nav {
+      position: sticky;
+      top: 120px; /* Adjust according to new header height */
+      background-color: #005b96;
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      z-index: 999;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      text-transform: uppercase;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #003c63;
+    }
+
     .container {
       max-width: 900px;
       margin: 20px auto;
@@ -80,28 +105,6 @@
     /* Smooth scroll behavior */
     html {
       scroll-behavior: smooth;
-    }
-
-    /* Navigation Bar Styles */
-    nav {
-      background-color: #005b96;
-      color: white;
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: white;
-      padding: 12px 20px;
-      font-size: 16px;
-      text-transform: uppercase;
-      transition: background-color 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #003c63;
     }
 
     /* Section Styling */
