@@ -3,253 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ko Tin Aye Bolts & Nuts Trading</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      background-color: #005b96;
-      color: white;
-      text-align: center;
-      transition: all 0.3s ease;
-      z-index: 1000;
-      padding: 60px 10px;
-    }
-
-    header.shrink {
-      padding: 30px 10px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-      transition: font-size 0.3s ease;
-    }
-
-    header.shrink h1 {
-      font-size: 18px;
-    }
-
-    .language-toggle {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      display: flex;
-      gap: 10px;
-      transition: top 0.3s ease;
-    }
-
-    header.shrink .language-toggle {
-      top: 5px;
-    }
-
-    .language-toggle button {
-      padding: 6px 12px;
-      font-size: 14px;
-      cursor: pointer;
-      border: none;
-      border-radius: 20px;
-      font-weight: bold;
-    }
-
-    .language-toggle button.active-lang {
-      background-color: #ffffff;
-      color: #005b96;
-    }
-
-    .language-toggle button:not(.active-lang) {
-      background-color: #005b96;
-      color: #ffffff;
-    }
-
-    .language-toggle button:hover {
-      opacity: 0.85;
-    }
-
-    nav {
-      position: sticky;
-      top: calc(60px + 10px);
-      background-color: #005b96;
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-      z-index: 999;
-      transition: top 0.3s ease;
-    }
-
-    header.shrink + nav {
-      top: calc(30px + 10px);
-    }
-
-    nav a {
-      text-decoration: none;
-      color: white;
-      padding: 12px 20px;
-      font-size: 16px;
-      text-transform: uppercase;
-      border-radius: 20px;
-      margin: 0 5px;
-      transition: background-color 0.3s;
-      background-color: #005b96;
-    }
-
-    nav a:hover {
-      background-color: #003c63;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 40px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .mm, .en {
-      display: none;
-    }
-
-    .active {
-      display: block;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    section {
-      padding: 40px 0;
-      border-bottom: 1px solid #ddd;
-    }
-
-    section:last-child {
-      border-bottom: none;
-    }
-
-    h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 20px;
-      }
-
-      .container {
-        margin: 10px;
-        padding: 15px;
-      }
-
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      nav a {
-        margin: 5px 0;
-      }
-    }
-  </style>
+  <title>Fastener Website</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header id="pageHeader">
-    <h1>Ko Tin Aye Bolts & Nuts Trading</h1>
-    <div class="language-toggle">
-      <button id="btn-en" onclick="showContent('en')">Eng</button>
-      <button id="btn-mm" onclick="showContent('mm')">MM</button>
+  <div class="header">
+    <div class="navbar">
+      <div class="logo">Your Logo</div>
+      <div class="lang-switcher">
+        <button class="active">EN</button>
+        <button>MM</button>
+      </div>
     </div>
-  </header>
-
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <div class="container">
-    <div id="en" class="en active">
-      <section id="home">
-        <h2>Welcome!</h2>
-        <p>Welcome to Our Ko Tin Aye Bolts & Nuts Trading! We’re happy to welcome you and introduce our shop. We’re a passionate team dedicated to bringing quality and reliability to every customer we serve. Whether you're browsing or ready to order, we’re here to help you find exactly what you need.</p>
-        <p>We specialize in a wide range of fasteners—bolts, nuts, screws, washers, and more. All our products are carefully selected for durability and performance, ensuring our customers get dependable quality they can trust. Whether you're buying in bulk or for a specific project, we’ve got the right solution.</p>
-        <p>Customers choose us because we offer more than just products—we provide value, responsive service, and genuine care. With transparent pricing, consistent stock, and helpful support, we make it easy for you to get what you need, when you need it.</p>
-      </section>
-
-      <section id="about">
-        <h2>About Us</h2>
-        <p>We’ve been in the fastener business for over 10 years, specializing in high-quality bolts, nuts, and other essential hardware for every project. Our goal is to provide our customers with the best products and exceptional service.</p>
-      </section>
-
-      <section id="services">
-        <h2>Our Services</h2>
-        <p>We offer retail and wholesale options, catering to businesses and individual customers. Fast delivery and excellent customer service make us the best choice for all your fastener needs.</p>
-      </section>
-
-      <section id="contact">
-        <h2>Contact Us</h2>
-        <p>You can reach us via phone, email, or Facebook. Let us know your needs, and we'll make sure you get the best service possible!</p>
-      </section>
-    </div>
-
-    <div id="mm" class="mm">
-      <section id="home">
-        <h2>ကြိုဆိုပါတယ်!</h2>
-        <p>ကျွန်ုပ်တို့၏ ကိုတင်အေးမူလီဘိုလ်နပ်ရောင်းဝယ်ရေးမှ ကြိုဆိုပါတယ်။ သုံးစွဲသူအပေါင်းတို့အား ကျွန်ုပ်တို့၏လုပ်ငန်းကို မိတ်ဆက်နိုင်ရန် ဝမ်းမြောက်ပျော်ရွှင်စွာ ကြိုဆိုလိုက်ပါတယ်။ ကျွန်ုပ်တို့သည် သုံးစွဲသူတိုင်းအတွက် အရည်အသွေးမြင့် ဝန်ဆောင်မှုနှင့် ယုံကြည်စိတ်ချရမှုကို အဓိကထားသော စိတ်အားထက်သန်အဖွဲ့ဖြစ်ပါသည်။</p>
-      </section>
-
-      <section id="about">
-        <h2>အကြောင်းအရာ</h2>
-        <p>ကျွန်ုပ်တို့သည် စက်ပစ္စည်းလုပ်ငန်းကို ၁၀ နှစ်ကျော် ဆောင်ရွက်နေပြီ။ အရည်အသွေးမြင့်သော နပ်တိုင်များ၊ နပ်ခေါင်းများနှင့် အခြားအကြီးစားပစ္စည်းများအတွက် အထူးပြုလုပ်ပါသည်။</p>
-      </section>
-
-      <section id="services">
-        <h2>ဝန်ဆောင်မှုများ</h2>
-        <p>ကျွန်ုပ်တို့သည် လက်လီနှင့် လက်ကားရောင်းဝယ်မှု၊ ပို့ဆောင်ရေး စသဖြင့် စွမ်းဆောင်မှုများ ရရှိနိုင်ပါသည်။</p>
-      </section>
-
-      <section id="contact">
-        <h2>ဆက်သွယ်ရန်</h2>
-        <p>ဖုန်း၊ အီးမေးလ် သို့မဟုတ် Facebook မှတဆင့် ဆက်သွယ်နိုင်ပါသည်။</p>
-      </section>
+    <div class="nav-links">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#service">Service</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
 
-  <script>
-    function showContent(lang) {
-      document.querySelector('.en').classList.remove('active');
-      document.querySelector('.mm').classList.remove('active');
-      document.getElementById('btn-en').classList.remove('active-lang');
-      document.getElementById('btn-mm').classList.remove('active-lang');
-      document.getElementById(lang).classList.add('active');
-      document.getElementById('btn-' + lang).classList.add('active-lang');
-    }
+  <div class="content">
+    <section id="home">
+      <h2>Home Section</h2>
+      <p>Welcome to our fastener business!</p>
+    </section>
 
-    window.addEventListener('scroll', function() {
-      const header = document.getElementById('pageHeader');
-      if (window.scrollY > 100) {
-        header.classList.add('shrink');
-      } else {
-        header.classList.remove('shrink');
-      }
-    });
-  </script>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>We are a fastener trading company with years of experience.</p>
+    </section>
 
+    <section id="service">
+      <h2>Our Services</h2>
+      <p>We supply all kinds of industrial fasteners.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>You can reach us at: contact@fastenershop.com</p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
