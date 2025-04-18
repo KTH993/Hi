@@ -3,56 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fastener Website</title>
+  <title>Responsive Page</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <header class="header" id="header">
-    <div class="lang-switcher">
-      <button class="lang-btn active" id="engBtn">Eng</button>
-      <button class="lang-btn" id="mmBtn">MM</button>
+  <header id="header">
+    <div class="language-toggle">
+      <button id="btn-en" class="active">Eng</button>
+      <button id="btn-mm">MM</button>
     </div>
-
     <div class="header-center">
-      <div class="logo">🔩</div>
-      <div class="name">Fastener Shop</div>
+      <img src="logo.png" alt="Logo" class="logo" />
+      <h1 class="site-name">Your Brand</h1>
     </div>
-
-    <nav class="nav-links" id="navLinks">
-      <a href="#home" class="nav-btn active">Home</a>
-      <a href="#about" class="nav-btn">About</a>
-      <a href="#service" class="nav-btn">Service</a>
-      <a href="#contact" class="nav-btn">Contact</a>
+    <nav class="nav-bar">
+      <button class="nav-btn active" data-target="home">Home</button>
+      <button class="nav-btn" data-target="about">About</button>
+      <button class="nav-btn" data-target="service">Service</button>
+      <button class="nav-btn" data-target="contact">Contact</button>
     </nav>
   </header>
 
-  <main class="content">
-    <section id="home">
-      <h2>Home</h2>
-      <p class="eng">Welcome to our fastener shop!cccccccffeergruyukukuykyukyukykykykykyukykykyukyukyukykykykykyukykykykykykykykykykykykykuktykuykykykyukykykykkyukykykykykykykykykuyk8k8hkki</p>
-      <p class="mm">ဖတ်စရာအတွက် ပစ္စည်းအမျိုးမျိုးကို ကြိုဆိုပါတယ်။</p>
+  <main id="main-content">
+    <section id="home" class="content-section">
+      <h2 data-en="Welcome to our website" data-mm="ကျွန်ုပ်တို့၏ ဝက်ဘ်ဆိုဒ်မှ ကြိုဆိုပါတယ်">Welcome to our website</h2>
     </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p class="eng">We have been in business for years, providing reliable service.cccccccffeergruyukukuykyukyukykykykykyukykykyukyukyukykykykykyukykykykykykykykykykykykykuktykuykykykyukykykykkyukykykykykykykykykuyk8k8hkki</p>
-      <p class="mm">ကြာရွည်စွာအတွေ့အကြုံရှိတဲ့ ကုမ္ပဏီတစ်ခုဖြစ်ပါတယ်။</p>
+    <section id="about" class="content-section">
+      <div class="text-image">
+        <div class="text">
+          <h2 data-en="About Us" data-mm="ကျွန်ုပ်တို့အကြောင်း">About Us</h2>
+          <p data-en="About paragraph 1" data-mm="အကြောင်းစာပိုဒ် ၁"></p>
+          <p data-en="About paragraph 2" data-mm="အကြောင်းစာပိုဒ် ၂"></p>
+          <p data-en="About paragraph 3" data-mm="အကြောင်းစာပိုဒ် ၃"></p>
+        </div>
+        <img src="about.jpg" alt="About" />
+      </div>
     </section>
 
-    <section id="service">
-      <h2>Service</h2>
-      <p class="eng">We supply all types of industrial fasteners.cccccccffeergruyukukuykyukyukykykykykyukykykyukyukyukykykykykyukykykykykykykykykykykykykuktykuykykykyukykykykkyukykykykykykykykykuyk8k8hkki</p>
-      <p class="mm">စက်မှုသုံးသက်သက် ချိတ်ခြင်းပစ္စည်းအမျိုးမျိုးကိုရရှိနိုင်ပါတယ်။</p>
+    <section id="service" class="content-section">
+      <div class="text-image reverse">
+        <img src="service.jpg" alt="Service" />
+        <div class="text">
+          <h2 data-en="Our Services" data-mm="ကျွန်ုပ်တို့၏ ၀န်ဆောင်မှုများ">Our Services</h2>
+          <p data-en="Service paragraph 1" data-mm="၀န်ဆောင်မှုစာပိုဒ် ၁"></p>
+          <p data-en="Service paragraph 2" data-mm="၀န်ဆောင်မှုစာပိုဒ် ၂"></p>
+          <p data-en="Service paragraph 3" data-mm="၀န်ဆောင်မှုစာပိုဒ် ၃"></p>
+        </div>
+      </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p class="eng">Contact us at contact@fastenershop.comcccccccffeergruyukukuykyukyukykykykykyukykykyukyukyukykykykykyukykykykykykykykykykykykykuktykuykykykyukykykykkyukykykykykykykykykuyk8k8hkki</p>
-      <p class="mm">ဆက်သွယ်ရန် - contact@fastenershop.com</p>
+    <section id="contact" class="content-section">
+      <h2 data-en="Contact Us" data-mm="ဆက်သွယ်ရန်">Contact Us</h2>
     </section>
   </main>
 
+  <footer>
+    <p>© 2025 Your Brand. All rights reserved.</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
-</html>
+  </html>
